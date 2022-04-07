@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.DetailsFragment">
+
+
+    <ImageView
+        android:id="@+id/details_IV"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/ic_android"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="10dp"
+        />
+
+    <TextView
+        android:id="@+id/details_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/details_IV"
+        app:layout_constraintStart_toStartOf="@id/details_IV"
+        app:layout_constraintTop_toBottomOf="@id/details_IV"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/strAlcoholic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/details_IV"
+        app:layout_constraintStart_toStartOf="@id/details_IV"
+        app:layout_constraintTop_toBottomOf="@id/details_name"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/strCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/details_IV"
+        app:layout_constraintStart_toStartOf="@id/details_IV"
+        app:layout_constraintTop_toBottomOf="@id/strAlcoholic"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/strGlass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/details_IV"
+        app:layout_constraintStart_toStartOf="@id/details_IV"
+        app:layout_constraintTop_toBottomOf="@id/strCategory"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"/>
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/details_IV"
+        app:layout_constraintStart_toStartOf="@+id/details_IV"
+        app:layout_constraintTop_toBottomOf="@+id/strGlass">
+
+        <TextView
+            android:id="@+id/strInstructions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
+            android:text="@string/app_name"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/details_IV"
+            app:layout_constraintStart_toStartOf="@id/details_IV"
+            app:layout_constraintTop_toBottomOf="@id/strGlass" />
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/details_IV"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="@+id/details_IV"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView3">
+
+        <TextView
+            android:id="@+id/strIngredients"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
+            android:text="@string/app_name"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/details_IV"
+            app:layout_constraintStart_toStartOf="@id/details_IV"
+            app:layout_constraintTop_toBottomOf="@id/strInstructions" />
+    </ScrollView>
+
+    <Button
+        android:id="@+id/saveButton"
+        style="@style/Widget.Material3.Button.IconButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_star"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/details_IV"
+        app:layout_constraintStart_toStartOf="@+id/details_IV" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
