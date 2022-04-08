@@ -8,4 +8,4 @@ data class SmallCoctailItem(
     val idDrink: String,
     val strDrink: String,
     val strDrinkThumb: String
-):Parcelable
+) : Parcelable

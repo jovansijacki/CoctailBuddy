@@ -24,7 +24,7 @@ class CoctailRepository() {
     }
 
     private fun getCoctails() = retrofitService!!.getCoctailRepos()
-    private fun getDetails(id:String) = retrofitService!!.getDetails(id)
+    private fun getDetails(id: String) = retrofitService!!.getDetails(id)
 
     fun getAllCoctails(fetchCoctailsCallback: (SmallCoctailItemList) -> Unit) {
         val call = getCoctails()
@@ -35,21 +35,23 @@ class CoctailRepository() {
             ) {
                 fetchCoctailsCallback.invoke(response.body()!!)
             }
+
             override fun onFailure(call: Call<SmallCoctailItemList>, t: Throwable) {
                 Log.d("CoctailRepository", "Failure" + t.message)
             }
         })
     }
 
-    fun getCoctailDetails(id: String,fetchCoctailDetailsCallback: (CoctailItemList) -> Unit) {
+    fun getCoctailDetails(id: String, fetchCoctailDetailsCallback: (CoctailItemList) -> Unit) {
         val call = getDetails(id)
         call.enqueue(object : Callback<CoctailItemList> {
             override fun onResponse(
                 call: Call<CoctailItemList>,
                 response: Response<CoctailItemList>
-            ){
+            ) {
                 fetchCoctailDetailsCallback.invoke(response.body()!!)
             }
+
             override fun onFailure(call: Call<CoctailItemList>, t: Throwable) {
                 Log.d("CoctailRepository", "Failure" + t.message)
             }
@@ -59,6 +61,7 @@ class CoctailRepository() {
     interface CoctailItemsRepo {
         @GET("filter.php?i=Vodka")
         fun getCoctailRepos(): Call<SmallCoctailItemList>
+
         @GET("lookup.php")
         fun getDetails(@Query("i") id: String): Call<CoctailItemList>
     }

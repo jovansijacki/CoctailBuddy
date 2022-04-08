@@ -35,12 +35,4 @@ class DetailsFragmentViewModel: ViewModel() {
              LocalDataRepository.saveItem(fetchedItem!!)
          }
     }
-
-    fun getNumberOfCoctails(): Deferred<Int>{
-        return CoroutineScope(Dispatchers.IO).async{ LocalDataRepository.getItemCount() }
-    }
-
-     fun getAllCoctailsFromLocalDatabase(): Deferred<List<CoctailItem>> {
-       return CoroutineScope(Dispatchers.IO).async { LocalDataRepository.getAllCoctails() }
-    }
 }
