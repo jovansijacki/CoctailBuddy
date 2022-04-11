@@ -15,8 +15,7 @@ import com.example.coctailbuddy.data.SmallCoctailItem
 import com.example.coctailbuddy.room.LocalStorageRepository
 import com.example.coctailbuddy.viewmodels.DetailsFragmentViewModel
 
-class DetailsFragment: Fragment(R.layout.coctail_details_fragment) {
-
+class DetailsFragment : Fragment(R.layout.coctail_details_fragment) {
     private lateinit var viewModel: DetailsFragmentViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -25,31 +24,36 @@ class DetailsFragment: Fragment(R.layout.coctail_details_fragment) {
         val repository = LocalStorageRepository((activity as MainActivity).database)
         val saveButton = requireView().findViewById<Button>(R.id.saveButton)
         var fetchedItem: CoctailItem? = null
+
         postponeEnterTransition()
+
         viewModel = ViewModelProvider(this)[DetailsFragmentViewModel::class.java]
         viewModel.setLocalDataRepo(repository)
 
-        var coctailID:String? = null
-        if(arguments!=null) {
-            coctailID = requireArguments().getParcelable<SmallCoctailItem>("SmallCoctailItem")?.idDrink
+        var coctailID: String? = null
+        if (arguments != null) {
+            coctailID =
+                requireArguments().getParcelable<SmallCoctailItem>("SmallCoctailItem")?.idDrink
         }
-        viewModel.getCoctailDetail().observe(viewLifecycleOwner){
+
+        viewModel.getCoctailDetail().observe(viewLifecycleOwner) {
             fetchedItem = it
             requireActivity().title = it.strDrink
             setDetailsToViews(fetchedItem)
+
             startPostponedEnterTransition()
         }
-
 
         if (coctailID != null) {
             viewModel.getCoctailDetailsbyID(coctailID)
         }
-        saveButton.setOnClickListener{
+        saveButton.setOnClickListener {
             viewModel.saveToLocalDatabase(fetchedItem)
         }
     }
 
     private fun setDetailsToViews(it: CoctailItem?) {
+
         val view = this.requireView()
         val imgView = view.findViewById<ImageView>(R.id.details_IV)
         val name = view.findViewById<TextView>(R.id.details_name)
@@ -62,6 +66,7 @@ class DetailsFragment: Fragment(R.layout.coctail_details_fragment) {
         Glide.with(this)
             .load(it!!.strDrinkThumb)
             .into(imgView)
+
         name.text = it.strDrink
         strAlcoholic.text = it.strAlcoholic
         strCategory.text = it.strCategory

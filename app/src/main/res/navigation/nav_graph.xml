@@ -16,10 +16,35 @@
             app:exitAnim="@anim/slide_out_right"
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_homeFragment_to_favoritesFragment"
+            app:destination="@id/favoritesFragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_top"
+            app:popEnterAnim="@anim/slide_in_top"
+            app:popExitAnim="@anim/slide_out_bottom" />
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.example.coctailbuddy.fragment.DetailsFragment"
         android:label="coctail_details_fragment"
         tools:layout="@layout/coctail_details_fragment" />
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.coctailbuddy.fragment.FavoritesFragment"
+        android:label="favorites_fragment"
+        tools:layout="@layout/favorites_fragment" >
+        <action
+            android:id="@+id/action_favoritesFragment_to_favoritesDetailsFragment"
+            app:destination="@id/favoritesDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritesDetailsFragment"
+        android:name="com.example.coctailbuddy.fragment.FavoritesDetailsFragment"
+        android:label="favorites_details_fragment"
+        tools:layout="@layout/favorites_details_fragment" />
 </navigation>

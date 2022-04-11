@@ -15,7 +15,7 @@ object DataBaseInstance {
             ).build()
 
             INSTANCE = instance
-            // return instance
+
             instance
         }
     }

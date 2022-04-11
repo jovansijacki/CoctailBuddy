@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.FavoritesDetailsFragment">
+
+
+    <ImageView
+        android:id="@+id/favortes_details_IV"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/ic_android"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="10dp"
+        android:contentDescription="@string/coctail_image_description"
+        />
+
+    <TextView
+        android:id="@+id/favortes_details_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/favortes_details_IV"
+        app:layout_constraintStart_toStartOf="@id/favortes_details_IV"
+        app:layout_constraintTop_toBottomOf="@id/favortes_details_IV"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/favortes_strAlcoholic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/favortes_details_IV"
+        app:layout_constraintStart_toStartOf="@id/favortes_details_IV"
+        app:layout_constraintTop_toBottomOf="@id/favortes_details_name"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/favortes_strCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/favortes_details_IV"
+        app:layout_constraintStart_toStartOf="@id/favortes_details_IV"
+        app:layout_constraintTop_toBottomOf="@id/favortes_strAlcoholic"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/favortes_strGlass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/favortes_details_IV"
+        app:layout_constraintStart_toStartOf="@id/favortes_details_IV"
+        app:layout_constraintTop_toBottomOf="@id/favortes_strCategory"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"/>
+
+    <ScrollView
+        android:id="@+id/favortes_scrollView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/favortes_details_IV"
+        app:layout_constraintStart_toStartOf="@+id/favortes_details_IV"
+        app:layout_constraintTop_toBottomOf="@+id/favortes_strGlass">
+
+        <TextView
+            android:id="@+id/favortes_strInstructions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
+            android:text="@string/app_name"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/favortes_details_IV"
+            app:layout_constraintStart_toStartOf="@id/favortes_details_IV"
+            app:layout_constraintTop_toBottomOf="@id/favortes_strGlass" />
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/favortes_scrollView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/favortes_details_IV"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="@+id/favortes_details_IV"
+        app:layout_constraintTop_toBottomOf="@+id/favortes_scrollView3">
+
+        <TextView
+            android:id="@+id/favortes_strIngredients"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
+            android:text="@string/app_name"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/favortes_details_IV"
+            app:layout_constraintStart_toStartOf="@id/favortes_details_IV"
+            app:layout_constraintTop_toBottomOf="@id/favortes_strInstructions" />
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/deleteButton"
+        style="@style/Widget.Material3.Button.IconButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_star_full"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/favortes_details_IV"
+        app:layout_constraintStart_toStartOf="@+id/favortes_details_IV"
+        android:src="@drawable/ic_star_full"
+        android:contentDescription= "@string/coctail_image_description" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

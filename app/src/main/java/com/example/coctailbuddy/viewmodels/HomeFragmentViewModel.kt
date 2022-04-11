@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.example.coctailbuddy.data.SmallCoctailItemList
 import com.example.coctailbuddy.retrofit.CoctailRepository
 
-class HomeFragmentViewModel: ViewModel(){
+class HomeFragmentViewModel : ViewModel() {
 
     var dataList = MutableLiveData<SmallCoctailItemList>()
 
@@ -16,7 +16,7 @@ class HomeFragmentViewModel: ViewModel(){
         dataList.value = it
     }
 
-    fun getAllCoctails(){
+    fun getAllCoctails() {
         repository.getAllCoctails(fetchCoctailsCallback)
     }
 
